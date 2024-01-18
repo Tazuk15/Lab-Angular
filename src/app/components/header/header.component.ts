@@ -11,19 +11,19 @@ import { NgFor } from '@angular/common';
 export class HeaderComponent {
   menuList = [
     {
-      label: 'Home',
+      label: 'Trang chủ',
       link: '/',
     },
     {
-      label: 'About Us',
+      label: 'Về chúng tôi',
       link: '/about-us',
     },
     {
-      label: 'Shop',
+      label: 'Cửa hàng',
       link: '/shop',
     },
     {
-      label: 'Contact',
+      label: 'Liên lạc',
       link: '/',
     },
     {
