@@ -7,7 +7,7 @@ import { Observable } from 'rxjs/internal/Observable';
 })
 export class CategoryService {
 
-  cateUrl = 'https://65a66dff74cf4207b4f00144.mockapi.io/Products'; // khai bao apiUrl
+  cateUrl = 'https://db-tr2w.onrender.com/Categories'; // khai bao apiUrl
 
   constructor(private http: HttpClient) { }
   getAllCate():Observable<Category[]>{

@@ -4,11 +4,17 @@ import { ProductsComponent } from './pages/admin/products/products.component';
 import { AdminComponent } from './layouts/admin/admin.component';
 import { CreateComponent } from './pages/admin/create/create.component';
 import { EditComponent } from './pages/admin/edit/edit.component';
+import { LoginComponent } from './pages/login/login.component';
+import { RegisterComponent } from './pages/register/register.component';
+import { AdminGuard } from './guards/admin-guard.guard';
 export const routes: Routes = [
 
   { path: '', component: HomeComponent },
+  { path: 'register', component: RegisterComponent},
+  { path: 'login', component: LoginComponent},
   {
     path: 'admin',
+    canActivate: [AdminGuard],
     component: AdminComponent,
     children: [
       { path: 'products', component: ProductsComponent },
