@@ -3,18 +3,18 @@ import { FormBuilder, FormGroup, FormsModule, ReactiveFormsModule, Validators, F
 import { CommonModule } from '@angular/common';
 import { MessageService } from 'primeng/api';
 import { ToastModule } from 'primeng/toast';
-import { ProductService } from '../../../services/product.service';
+import { ProductService } from '../../../../services/product.service';
 
 import { Router, ActivatedRoute } from '@angular/router';
 @Component({
-  selector: 'app-create',
+  selector: 'app-edit',
   standalone: true,
   imports: [FormsModule, ReactiveFormsModule, ToastModule, CommonModule,],
-  templateUrl: './create.component.html',
-  styleUrl: './create.component.css',
+  templateUrl: './edit.component.html',
+  styleUrl: './edit.component.css',
   providers: [MessageService],
 })
-export class CreateComponent {
+export class EditComponent {
   id!: string;
   form: FormGroup;
   constructor(
@@ -52,9 +52,9 @@ export class CreateComponent {
       return;
     }
     const data = this.form.value;
-    if(data){
+    if(this.id){
        this.productService
-      .createProductAdmin(data)
+      .updateProductAdmin(this.id, data)
       .subscribe((data) => {
         this.messageService.add({
           severity: 'Successfully',
