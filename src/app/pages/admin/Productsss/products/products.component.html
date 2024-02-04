@@ -1,9 +1,43 @@
 
+
 <div class="container fixed left-48">
-  <div class="text-center text-5xl font-extrabold text-black-500 uppercase mb-5 mr-24">Product List</div>
-
-
+  
+  <div class="text-center text-5xl font-extrabold text-black-500 uppercase mb-5 mr-24">Product List
+    <div
+    class="flex items-center justify-between flex-column flex-wrap md:flex-row space-y-4 md:space-y-0 pb-4 bg-white ">
+    <div>
+        <button id="dropdownActionButton" (click)="handleClickDisplayed()" data-dropdown-toggle="dropdownAction"
+            class="inline-flex outline-none items-center text-gray-500 bg-white border border-gray-300 focus:outline-none hover:bg-gray-100 focus:ring-4 focus:ring-gray-200 font-medium rounded-lg text-sm px-3 py-1.5 "
+            type="button">
+            <span class="sr-only">Action button</span>
+            Categories
+            <svg class="w-2.5 h-2.5 ms-2.5" aria-hidden="false" xmlns="http://www.w3.org/2000/svg" fill="none"
+                viewBox="0 0 10 6">
+                <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                    d="m1 1 4 4 4-4" />
+            </svg>
+        </button>
+        <div id="dropdownAction" [ngClass]="{'block': isDisplayBlock, 'hidden': !isDisplayBlock}"
+            class="z-10 block bg-white divide-y divide-gray-100 rounded-lg shadow w-52 overflow-y-auto"
+            style="max-height: 120px;">
+            <ul class="py-1 text-sm text-gray-700 relative w-full" aria-labelledby="dropdownActionButton">
+                <li class="w-[90%] cursor-auto" >
+                    <a (click)="handleFilterCategory(defautlString)"
+                        class="block cursor-auto px-4 py-2 hover:bg-gray-100"></a>
+                </li>
+                <li class="w-[90%] cursor-auto" *ngFor="let cate of categoryList">
+                    <a (click)="handleFilterCategory(cate.name)"
+                        class="block px-4 cursor-auto py-2 hover:bg-gray-100 ">{{cate.name}}</a>
+                </li>
+            </ul>
+        </div>
+    </div>
+</div>
+  </div>
   <div class=" w-0 shadow-md sm:rounded-lg pb-5">
+    <div class="flex items-center gap-2">
+
+    </div>
     <table border="1"
       class="ml-24 text-sm text-left rtl:text-right text-gray-500 dark:text-gray-400 border border-black border-collapse">
       <thead class="text-xs text-gray-700 uppercase bg-gray-50 dark:bg-gray-700 dark:text-gray-400">

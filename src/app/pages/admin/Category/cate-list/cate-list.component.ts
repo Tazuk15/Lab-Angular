@@ -1,6 +1,6 @@
 import { Component, inject } from '@angular/core';
 import { NgFor } from '@angular/common';
-import { Category } from '../../../../types/Category';
+import { Category } from '../../../../types/Product';
 import { RouterLink } from '@angular/router';
 import { CategoryService } from '../../../../services/category.service';
 import { SidebarComponent } from '../../../../components/sidebar/sidebar.component';

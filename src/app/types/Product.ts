@@ -1,5 +1,3 @@
-import { Category } from './Category';
-
 export type Product = {
   id: number; // Omit loai bo
   title: string;
@@ -7,10 +5,14 @@ export type Product = {
   image: string;
   description: string;
   category: string; // Omit loai bo
-  rating: {
-    rate: number;
-    count: number;
-  };
+};
+export type Category = {
+  id: string;
+  name: string;
+  category: string,
+  description: string;
+  createdAt: string;
+  updatedAt: string;
 };
 
 export type ProductAdmin = Omit<Product, 'id' | 'category'> & {
